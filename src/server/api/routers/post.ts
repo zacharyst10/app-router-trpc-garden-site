@@ -1,3 +1,4 @@
+import { eq } from "drizzle-orm";
 import { z } from "zod";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
@@ -29,4 +30,15 @@ export const postRouter = createTRPCRouter({
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.db.query.posts.findMany();
   }),
+
+  delete: publicProcedure
+    .input(
+      z.object({
+        postId: z.number(),
+      }),
+    )
+    .mutation(async ({ input, ctx }) => {
+      const { postId } = input;
+      return ctx.db.delete(posts).where(eq(posts.id, postId));
+    }),
 });
