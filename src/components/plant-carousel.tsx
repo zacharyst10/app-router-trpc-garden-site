@@ -10,11 +10,11 @@ import {
   CarouselPrevious,
 } from "~/components/ui/carousel";
 
-import blueberry from "@/public/plants/blueberry.jpg";
-import onion from "@/public/plants/onion.jpg";
-import pepper from "@/public/plants/pepper.jpg";
-import tomato from "@/public/plants/tomato.jpg";
-import raspberry from "@/public/plants/raspberry.jpg";
+import blueberry from "../../public/plants/blueberry.jpg";
+import onion from "../../public/plants/onion.jpg";
+import pepper from "../../public/plants/pepper.jpg";
+import tomato from "../../public/plants/tomato.jpg";
+import raspberry from "../../public/plants/raspberry.jpg";
 
 import {
   Drawer,
