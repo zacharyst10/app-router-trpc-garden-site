@@ -1,87 +1,66 @@
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { Button } from "~/components/ui/button";
 import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "~/components/ui/table";
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "~/components/ui/form";
+import { Input } from "~/components/ui/input";
 
-const plants = [
-  {
-    plantName: "Rose",
-    scientificName: "Rosa spp.",
-    preferredClimate: "Temperate",
-    bloomingSeason: "Late spring to fall",
-  },
-  {
-    plantName: "Lavender",
-    scientificName: "Lavandula spp.",
-    preferredClimate: "Mediterranean",
-    bloomingSeason: "Summer",
-  },
-  {
-    plantName: "Sunflower",
-    scientificName: "Helianthus annuus",
-    preferredClimate: "Warm",
-    bloomingSeason: "Summer",
-  },
-  {
-    plantName: "Tulip",
-    scientificName: "Tulipa spp.",
-    preferredClimate: "Temperate",
-    bloomingSeason: "Spring",
-  },
-  {
-    plantName: "Orchid",
-    scientificName: "Orchidaceae",
-    preferredClimate: "Tropical",
-    bloomingSeason: "Varies",
-  },
-  {
-    plantName: "Daffodil",
-    scientificName: "Narcissus spp.",
-    preferredClimate: "Temperate",
-    bloomingSeason: "Spring",
-  },
-  {
-    plantName: "Azalea",
-    scientificName: "Rhododendron spp.",
-    preferredClimate: "Temperate",
-    bloomingSeason: "Spring",
-  },
-];
+const formSchema = z.object({
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+});
+export default function ZoneFinder() {
+  // 1. Define your form.
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+    },
+  });
 
-export default function Almanac() {
+  // 2. Define a submit handler.
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
+
   return (
-    <Table className="container mt-10">
-      <TableCaption>A list of your plants in your Almanac.</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[150px]">Plant Name</TableHead>
-          <TableHead>Scientific Name </TableHead>
-          <TableHead>Preferred Climate</TableHead>
-          <TableHead className="text-right">Blooming Season</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {plants.map((plant) => (
-          <TableRow key={plant.plantName}>
-            <TableCell className="font-medium">{plant.plantName}</TableCell>
-            <TableCell>{plant.scientificName}</TableCell>
-            <TableCell>{plant.preferredClimate}</TableCell>
-            <TableCell className="text-right">{plant.bloomingSeason}</TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">7</TableCell>
-        </TableRow>
-      </TableFooter>
-    </Table>
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="mx-auto mt-10 max-w-sm space-y-8"
+      >
+        <FormField
+          control={form.control}
+          name="username"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input placeholder="shadcn" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit">Submit</Button>
+      </form>
+    </Form>
   );
 }

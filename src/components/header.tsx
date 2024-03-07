@@ -7,18 +7,20 @@ import Logo from "../../public/icons/logo.png";
 
 export default function Header() {
   return (
-    <header className="container flex items-center justify-between py-5">
-      <Link href="/">
-        <Image
-          src={Logo}
-          alt="logo"
-          width={50}
-          height={50}
-          placeholder="blur"
-        />
-      </Link>
-      <Navbar />
-      <ModeToggle />
+    <header className="mb-10 flex items-center justify-between border-b py-5">
+      <div className="container mx-auto flex justify-between">
+        <Link href="/">
+          <Image
+            src={Logo}
+            alt="logo"
+            width={50}
+            height={50}
+            placeholder="blur"
+          />
+        </Link>
+        <Navbar />
+        <ModeToggle />
+      </div>
     </header>
   );
 }

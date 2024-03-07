@@ -25,7 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased ${inter.variable}`}>
+      <body
+        className={`flex min-h-screen flex-col font-sans antialiased  ${inter.variable}`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -33,7 +35,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <TRPCReactProvider>
+            <main className="flex-grow">{children}</main>
+          </TRPCReactProvider>
           <Footer />
         </ThemeProvider>
       </body>
