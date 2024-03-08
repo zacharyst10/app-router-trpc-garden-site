@@ -44,14 +44,12 @@ export default async function Home() {
             {hello ? hello.greeting : "Loading tRPC query..."}
           </p>
         </div>
-
-        <CrudShowcase />
       </div>
     </main>
   );
 }
 
-async function CrudShowcase() {
+export async function CrudShowcase() {
   const latestPost = await api.post.getLatest.query();
   const posts = await api.post.getAll.query();
 

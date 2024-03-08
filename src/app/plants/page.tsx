@@ -1,4 +1,5 @@
 import { PlantCarousel } from "~/components/plant-carousel";
+import { CrudShowcase } from "../page";
 
 export default function Plants() {
   return (
@@ -6,20 +7,11 @@ export default function Plants() {
       <h1>Plants</h1>
       <p>Learn about the different types of plants or something!</p>
       <div className="container">
-        <h1 className="py-5 text-6xl">Fruits</h1>
+        <h1 className="py-5 text-6xl">Plants</h1>
         <PlantCarousel />
       </div>
-      <div className="container">
-        <h1 className="py-5 text-6xl">Veggies</h1>
-        <PlantCarousel />
-      </div>
-      <div className="container">
-        <h1 className="py-5 text-6xl">Herbs</h1>
-        <PlantCarousel />
-      </div>
-      <div className="container">
-        <h1 className="py-5 text-6xl">Flowers</h1>
-        <PlantCarousel />
+      <div className="flex justify-center py-5">
+        <CrudShowcase />
       </div>
     </div>
   );
