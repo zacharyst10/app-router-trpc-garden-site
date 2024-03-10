@@ -61,10 +61,10 @@ export async function CrudShowcase() {
         <p>You have no posts yet.</p>
       )}
       <h2 className="mt-4 text-2xl font-bold">All Posts</h2>
-      <ul>
+      <ul className="py-5">
         {posts.map((post) => (
           <li key={post.id}>
-            <div>
+            <div className="flex justify-between">
               {post.name}
 
               <DeletePostButton postId={post.id} />
