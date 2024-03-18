@@ -59,7 +59,7 @@ export default function ZoneFinder() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Submit your question</Button>
       </form>
     </Form>
   );
