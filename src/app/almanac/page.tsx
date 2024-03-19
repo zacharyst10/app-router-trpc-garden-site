@@ -52,6 +52,78 @@ const plants = [
     preferredClimate: "Temperate",
     bloomingSeason: "Spring",
   },
+  {
+    plantName: "Daisy",
+    scientificName: "Bellis perennis",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Spring to fall",
+  },
+  {
+    plantName: "Lily",
+    scientificName: "Lilium spp.",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Summer",
+  },
+  {
+    plantName: "Iris",
+    scientificName: "Iris spp.",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Spring to summer",
+  },
+  {
+    plantName: "Hydrangea",
+    scientificName: "Hydrangea spp.",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Summer",
+  },
+  {
+    plantName: "Peony",
+    scientificName: "Paeonia spp.",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Spring to summer",
+  },
+  {
+    plantName: "Chrysanthemum",
+    scientificName: "Chrysanthemum spp.",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Fall",
+  },
+  {
+    plantName: "Lilac",
+    scientificName: "Syringa vulgaris",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Spring",
+  },
+  {
+    plantName: "Dahlia",
+    scientificName: "Dahlia spp.",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Summer to fall",
+  },
+  {
+    plantName: "Carnation",
+    scientificName: "Dianthus caryophyllus",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Spring to fall",
+  },
+  {
+    plantName: "Gladiolus",
+    scientificName: "Gladiolus spp.",
+    preferredClimate: "Temperate",
+    bloomingSeason: "Summer",
+  },
+  {
+    plantName: "Amaryllis",
+    scientificName: "Hippeastrum spp.",
+    preferredClimate: "Tropical",
+    bloomingSeason: "Winter to spring",
+  },
+  {
+    plantName: "Anthurium",
+    scientificName: "Anthurium spp.",
+    preferredClimate: "Tropical",
+    bloomingSeason: "Varies",
+  },
 ];
 
 export default function Almanac() {
