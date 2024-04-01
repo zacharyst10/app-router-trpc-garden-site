@@ -50,7 +50,7 @@ export default function ZoneFinder() {
             <FormItem>
               <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Enter name" {...field} />
               </FormControl>
               <FormDescription>
                 This is your public display name.
